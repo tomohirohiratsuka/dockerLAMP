@@ -3,7 +3,10 @@ services:
   mysql:
     build: ./mysql
     environment:
+      MYSQL_DATABASE: order
       MYSQL_ROOT_PASSWORD: pass
+    ports:
+            - "3306:3306"
     volumes:
       - db:/var/lib/mysql
   php:
